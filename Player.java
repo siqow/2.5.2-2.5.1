@@ -42,4 +42,8 @@ public class Player
   {
     name = x;
   }
+
+  public void setPoints(int x) { 
+    points = x;
+  }
 }
