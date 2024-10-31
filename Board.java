@@ -22,15 +22,14 @@ public class  Board
    * @see phrase
   **/ 
   public Board()
-  {
-    solvedPhrase = "";
-    phrase = "";
-    currentLetterValue = 0;
-    phrase = loadPhrase();
-    setLetterValue();
-    System.out.println("Phrase: " + phrase);
-  }
-
+{
+  solvedPhrase = "";
+  phrase = "";
+  currentLetterValue = 0;
+  phrase = loadPhrase();
+  setLetterValue();
+  System.out.println("Phrase: " + phrase);
+}
   /* your code here - accessor(s) */
   /**
    * returns a String of the solved phrase
@@ -51,9 +50,8 @@ public class  Board
   public int getLetterValue() { 
     return currentLetterValue;
   }
-  
-  
   /* your code here - mutator(s)  */
+
 
   /* ---------- provided code, do not modify ---------- */
   /**
@@ -148,31 +146,22 @@ public class  Board
   **/
   public boolean guessLetter(String guess)
   {
-    // a boolean representing is a letter was found in the phrase
     boolean foundLetter = false;
-    // a String of the new phrase with all the newly guessed letter revealed
     String newSolvedPhrase = "";
     
-    // loop through the phrase
     for (int i = 0; i < phrase.length(); i++)
     {
-      // if the guessed letter is in the phrase
       if (phrase.substring(i, i + 1).equals(guess))
       {
-        // update the newSolvedPhrase variable
         newSolvedPhrase += guess + " ";
-        // change the boolean to true (because it was found)
         foundLetter = true;
       }
       else
       {
-        // otherwise, do not reveal the letter
         newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";  
       }
     }
-    // update the public solved phrase vairable (so that it can be updated for the whole game)
     solvedPhrase = newSolvedPhrase;
-    // return the letter that was found
     return foundLetter;
   } 
 } 

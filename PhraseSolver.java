@@ -48,10 +48,24 @@ public class PhraseSolver
     boolean correct = true;
     while (!solved) 
     {
-      
+      String name = "";
       /* your code here - game logic */
-      
-      
+      if(currentPlayer ==1){
+         name = player1.getName();
+        System.out.println(name + " is now guessing");
+      }
+      else {
+         name = player1.getName();
+        System.out.println(name + " is now guessing");
+      }
+      System.out.println("Guess a letter:");
+      Scanner sc = new Scanner(System.in);
+      String letter = sc.nextLine();
+      board.guessLetter(letter);
+      String phrase = board.getPartialPhrase();
+      int point = board.getLetterValue();
+      System.out.println("Your phrase is now" + phrase);
+      System.out.println("The point value of your next guess is " + point);
       /* your code here - determine how game ends */
       solved = true; 
     } 

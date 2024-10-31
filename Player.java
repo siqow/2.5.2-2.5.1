@@ -4,7 +4,7 @@
  * A Player class the PhraseSolverGame
  */
 
-import java.util.Scanner;
+ import java.util.Scanner;
 
 public class Player
 {
