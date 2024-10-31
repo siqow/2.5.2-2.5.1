@@ -13,6 +13,12 @@ public class PhraseSolver
   private Board board;
   private Boolean solved;
   /* your code here - constructor(s) */ 
+
+  /** 
+   * initializes all the players and the board 
+   * @param none
+   * @return none
+  **/
   public PhraseSolver()
   {
     player1 = null;
@@ -27,6 +33,11 @@ public class PhraseSolver
   
   /* your code here - mutator(s)  */
 
+  /** 
+   * check if the game is solved
+   * @param none
+   * @return none
+  **/
   public void play()
   {
     boolean solved = false;

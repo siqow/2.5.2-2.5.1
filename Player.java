@@ -22,7 +22,12 @@ public class Player
     return points;
   }
   /* your code here - constructor(s) */ 
-  
+
+  /** 
+   * initialize a player with all their attributes (name, points, etc.)
+   * @param none
+   * @return none
+  **/
   public Player()
   {
     points = 0;
