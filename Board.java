@@ -14,25 +14,28 @@ public class  Board
 
   /* your code here - constructor(s) */ 
   public Board()
-  {
-    solvedPhrase = "";
-    phrase = "";
-    currentLetterValue = 0;
-    phrase = loadPhrase();
-    setLetterValue();
-    System.out.println("Phrase: " + phrase);
-  }
-
+{
+  solvedPhrase = "";
+  phrase = "";
+  currentLetterValue = 0;
+  phrase = loadPhrase();
+  setLetterValue();
+  System.out.println("Phrase: " + phrase);
+}
   /* your code here - accessor(s) */
-  public String getSolvedPhrase() { 
+  public String getPhrase (){
     return solvedPhrase;
   }
-  public int getLetterValue() { 
+
+  public String getPartialPhrase() {
+    return phrase;
+  }
+
+  public int getLetterValue() {
     return currentLetterValue;
   }
-  
-  
   /* your code here - mutator(s)  */
+
 
   /* ---------- provided code, do not modify ---------- */
   public void setLetterValue()
@@ -41,7 +44,7 @@ public class  Board
     currentLetterValue = randomInt;
   }
 
-  public boolean solvePhrase(String guess)
+  public boolean isSolved(String guess)
   {
     if (phrase.equals(guess))
     {
@@ -96,39 +99,25 @@ public class  Board
     
     return tempPhrase;
   }  
-  /*
-  this method takes in one parameter, which is a string (or more like a character) of the letter the player guesses
-  the function loops through the phrase that they are supposed to guess
-    if they guess a letter in the phrase, it is revealed
-  the boolean of the letter being solved is then returned 
-  */
+
   public boolean guessLetter(String guess)
   {
-    // a boolean representing is a letter was found in the phrase
     boolean foundLetter = false;
-    // a String of the new phrase with all the newly guessed letter revealed
     String newSolvedPhrase = "";
     
-    // loop through the phrase
     for (int i = 0; i < phrase.length(); i++)
     {
-      // if the guessed letter is in the phrase
       if (phrase.substring(i, i + 1).equals(guess))
       {
-        // update the newSolvedPhrase variable
         newSolvedPhrase += guess + " ";
-        // change the boolean to true (because it was found)
         foundLetter = true;
       }
       else
       {
-        // otherwise, do not reveal the letter
         newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";  
       }
     }
-    // update the public solved phrase vairable (so that it can be updated for the whole game)
     solvedPhrase = newSolvedPhrase;
-    // return the letter that was found
     return foundLetter;
   } 
 } 
